@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sombreros GyG</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div id="presentacion">
+        <h2>Listado de sombreros</h2>
+    </div>
+    <div class="main-container">
+        <table id="lista-sombreros" class="principal">
+            <tr>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Adorno</th>
+                <th>Precio</th>
+                <th>Tallas Disponibles</th>
+                <th>Foto</th>
+            </tr>
+            <tr>
+                <td>Sombrero de Huaso</td>
+                <td>Cafe</td>
+                <td>Cinta de cuero</td>
+                <td>$59.500</td>
+                <td>56, 57, 58, 59, 60</td>
+                <td>
+                    <div class="image-container">
+                        <img src="../sHuasoCafe.jfif" alt="sombrero huaso cafe">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Borsalino</td>
+                <td>Rojo</td>
+                <td>Cinta negra</td>
+                <td>$50.000</td>
+                <td>55, 56, 57, 58</td>
+                <td>
+                    <div class="image-container">
+                        <img src="../sBorsalinoRojo.jfif" alt="sombrero borsalino rojo">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Borsalino</td>
+                <td>Chocolate</td>
+                <td>Cinta purpura</td>
+                <td>$50.000</td>
+                <td>55, 56, 57, 58</td>
+                <td>
+                    <div class="image-container">
+                        <img src="../sBorsalinoChocolate.jfif" alt="sombrero borsalino chocolate">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Indiana ala larga</td>
+                <td>Cafe</td>
+                <td>Cuero decorado</td>
+                <td>$50.000</td>
+                <td>55, 56, 57, 58</td>
+                <td>
+                    <div class="image-container">
+                        <img src="../sIndianaCafeAlaLarga.jfif" alt="sombrero indiana cafe ala larga">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Capelina</td>
+                <td>Chocolate</td>
+                <td>Adorno Colorido</td>
+                <td>$50.000</td>
+                <td>55, 56, 57, 58</td>
+                <td>
+                    <div class="image-container">
+                        <img src="../sCapelinaChoco.jfif" alt="sombrero capelina chocolate">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="detalle" class="detalle-container" style="display:none;"></div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="imagen ampliada">
+                <button onclick="cerrarModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/cargarNavbar.js"></script>
+    <script src="../js/select.js"></script>
+    <script src="../js/validadorSS.js"></script>
+    <script src="../js/detalle.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombreros GyG</title>
+</head>
+<body>
+    <div class="header">
+        <img id="logo-id" src="Sombreros.svg" alt="Logo Sombreros GyG">
+        <h1>Sombreros GyG</h1>
+    </div>
+
+    <ul>
+        <li><a href="Index.html">Página Principal</a></li>
+        <li><a href="ListadoSombreros.html">Ver lista Sombreros</a></li>
+        <li><a href="javascript:void(0)" class="open-form" onclick="openModalS(); return false;">Pedir Sombrero</a></li>
+        <li><a href="stats.html">Estadísticas</a></li>
+        <li><a href="ListadoSS.html">Ver sombreros solicitados</a></li>
+        <li><a href="javascript:void(0)" class="open-form" onclick="openModalA(); return false;">Añadir Sombrero</a></li>
+    </ul>
+
+    <div id="modalSS" class="modal">
+        <div class="modal-content">
+            <h2>Solicitar Sombrero</h2>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div id="val-box" hidden>
+                <h4 id="val-msg">Errores en el formulario:</h4>
+                <ul id="val-list"></ul>
+            </div>
+            <form id="formSS" method="post" enctype="multipart/form-data" onsubmit="return validarFormularioSS(event)">
+                <fieldset>
+                    <legend>Informacion del envio</legend>
+                    <label for="select-region">Región</label>
+                    <select name="select-region" id="select-region" required>
+                        <option value="">Seleccione una región</option>
+                    </select><br>
+
+                    <label for="select-comuna">Comuna</label>
+                    <select name="select-comuna" id="select-comuna" required>
+                        <option value="">Seleccione una comuna</option>
+                    </select><br>
+
+                    <label for="sector">Sector</label>
+                    <input type="text" id="sector" value="" required><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Informacion de contacto</legend>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" value="" required><br>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="" required><br>
+
+                    <label for="telefono">Número de celular</label>
+                    <input type="tel" id="telefono" value="" required><br>
+
+                    <label for="select-contacto">Contactar por</label>
+                    <select name="select-contacto" id="select-contacto" required>
+                        <option value="">Seleccione un medio de contacto</option>
+                    </select><br>
+
+                    <div id="red-social" style="display: none;">
+                        <label for="red-s">Usuario</label>
+                        <input type="text" id="red-s" value=""><br>
+                    </div>
+                    <div id="otro-contacto" style="display: none;">
+                        <label for="otro-c">Plataforma</label>
+                        <input type="text" id="otro-c" value=""><br>
+                        <label for="otro-c2">Usuario</label>
+                        <input type="text" id="otro-c2" value=""><br>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informacion del sombrero</legend>
+                    <label for="select-estilo">Modelo de sombrero</label>
+                    <select name="select-estilo" id="select-estilo" required>
+                        <option value="">Seleccione un estilo</option>
+                    </select><br>
+                        
+                    <label for="select-color">Color del sombrero</label>
+                    <select name="select-color" id="select-color" required>
+                        <option value="">Seleccione un color</option>
+                    </select><br>
+
+                    <div id="talla1" style="display: none;">
+                        <label for="select-talla">Talla del sombrero</label>
+                        <select name="select-talla" id="select-talla">
+                            <option value="">Seleccione una talla</option>
+                        </select><br>
+                    </div>
+
+                    <div id="talla2" style="display: none;">
+                        <label for="select-estilo2">Modelo del sombrero</label>
+                        <input type="text" id="select-estilo2" value=""><br>
+
+                        <label for="select-talla2">Talla del sombrero</label>
+                        <input type="number" id="select-talla2" value=""><br>
+                    </div>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalAS" class="modal">
+        <div class="modal-content">
+            <h2>Añadir Sombrero</h2>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div id="val-box2" hidden>
+                <h4 id="val-msg2">Errores en el formulario:</h4>
+                <ul id="val-list2"></ul>
+            </div>
+            <form id="formAS" method="post" enctype="multipart/form-data" onsubmit="return validarFormularioAS(event)">
+                <fieldset>
+                    <label for="modelo-disp">Modelo</label>
+                    <input type="text" id="modelo-disp" value="" required><br>
+
+                    <label for="color-disp">Color</label>
+                    <input type="text" id="color-disp" value="" required><br>
+
+                    <label for="adorno">Adorno</label>
+                    <input type="text" id="adorno" value="" required><br>
+
+                    <label for="precio">Precio</label>
+                    <input type="number" id="precio" value="" required><br>
+
+                    <label for="tallas-disp">Tallas Disponibles</label>
+                    <input type="text" id="tallas-disp" value="" required><br>
+
+                    <label for="foto-sombrero">Subir foto</label>
+                    <input type="file" id="foto-sombrero" name="photo" accept="image/*" multiple required>
+                    <small>Selecciona entre 1 y 3 fotos.</small>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
