@@ -8,7 +8,6 @@ function validarFormularioSS(event) {
     valList.innerHTML = "";
     valBox.hidden = true;
 
-    // Obtener todos los campos con el atributo 'required'
     const requiredInputs = form.querySelectorAll('[required]');
 
     requiredInputs.forEach(input => {
@@ -75,7 +74,6 @@ function validarFormularioSS(event) {
         }
     }
 
-    // Campos condicionales para tallas
     const talla1Div = document.getElementById("talla1");
     if (talla1Div.style.display !== "none") {
         const tallaSelect = document.getElementById("select-talla");
@@ -120,12 +118,10 @@ function validarFormularioAS(event) {
     valList.innerHTML = "";
     valBox.hidden = true;
 
-    // Obtener todos los campos con el atributo 'required'
     const requiredInputs = form.querySelectorAll('[required]');
 
     requiredInputs.forEach(input => {
         if (input.type === 'file') {
-            // Se valida el input de tipo file por separado
             return;
         }
         if (input.value.trim() === "") {
